@@ -1,0 +1,13 @@
+---
+
+# Fixes:
+# https://www.reddit.com/r/ansible/comments/10pzoo1/issues_with_firewalld_with_fedora_python/?rdt=44687
+# https://www.google.com/search?q=import+the+required+Python+library+(firewall)
+
+- name: Fix Firewall Issue - install firewalld & python-firewall
+  ansible.builtin.dnf:
+    name:
+    - firewalld
+    - python-firewall
+    state: latest
+  become: true
